@@ -22,10 +22,15 @@ if((mioNumero % 2) === 0){
 const array1 = [15, 2, 7];
 const array2 = [5];
 
+let arrayGrande = 0;
+let arrayPiccolo = 0;
 let i=0;
 
-// controllo qual è l'array con minor elementi
 
+/*
+//             SOLUZIONE CON 2 CICLI WHILE
+
+// controllo qual è l'array con minor elementi
 if (array2.length < array1.length){
 
     // ciclo per far aggiungere elementi dell'array1 all'array2 fino a quando non avranno la stessa lunghezza
@@ -59,4 +64,37 @@ if (array2.length < array1.length){
         i++
     }
 }
+*/
+
+if (array2.length < array1.length){
+    arrayGrande = array1;
+    arrayPiccolo = array2;
+} else{
+    arrayGrande = array2;
+    arrayPiccolo = array1;
+}
+
+console.log("arrayPiccolo prima del ciclo", arrayPiccolo);
+console.log("arrayGrande prima del ciclo", arrayGrande);
+
+// ciclo per far aggiungere elementi dell'array1 all'array2 fino a quando non avranno la stessa lunghezza
+while(arrayPiccolo.length < arrayGrande.length){
+
+    console.log(arrayPiccolo[i]);
+    // valore dell'array prima del push
+    console.log("arrayPiccolo prima del push: ", arrayPiccolo);
+
+
+    arrayPiccolo.push(arrayGrande[i]);
+
+    console.log("arrayPiccolo dopo il push: ", arrayPiccolo);
+
+    // incremento la i per far aggiungere l'elemento successivo dell'array1 all'array2
+    i++
+}
+
+console.log(arrayPiccolo);
+console.log(arrayGrande);
+
+
 /***************************** ESERCIZIO 3 ***************************************/
