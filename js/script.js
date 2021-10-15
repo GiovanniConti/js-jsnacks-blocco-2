@@ -69,9 +69,11 @@ if (array2.length < array1.length){
 if (array2.length < array1.length){
     arrayGrande = array1;
     arrayPiccolo = array2;
-} else{
+} else if(array1.length < array2.length){
     arrayGrande = array2;
     arrayPiccolo = array1;
+} else{
+    console.log("I due array hanno la stessa lunghezza.")
 }
 
 console.log("arrayPiccolo prima del ciclo", arrayPiccolo);
